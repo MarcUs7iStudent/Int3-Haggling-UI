@@ -1,0 +1,224 @@
+{
+    "Greeting": {
+      "SunshineAndRainbows": [
+        "Well met, {vendor_name}! I've heard tales of your {vendor_reputation} stall!",
+        "Oh wow, your stall looks incredible today! What a delight, {vendor_name}!",
+        "I can't wait to see what items you have for me today!",
+        "Blessed morning, {vendor_name}! I've been looking forward to this all week!",
+        "Ah, {vendor_name}, the legend in the market! I wouldn't miss a chance to shop with you."
+      ],
+      "Happy": [
+        "Hey there, {vendor_name}! Got anything interesting today?",
+        "Looking good, {vendor_name}. What's for sale?",
+        "Back again for your fine items, as always!",
+        "Pleasure to see you again, {vendor_name}. I've brought coin and curiosity.",
+        "Hello! You're always the highlight of this market."
+      ],
+      "Neutral": [
+        "Good day, {vendor_name}.",
+        "Let's see what's on display today.",
+        "Morning. I'm just browsing for now.",
+        "Hello. Got anything new today?",
+        "Greetings."
+      ],
+      "Annoyed": [
+        "Let's make this quick, I don't have all day.",
+        "I hope you're more reasonable with prices today, {vendor_name}.",
+        "Back again, though I'm not sure why.",
+        "Don't try to push junk on me again.",
+        "You better not be overcharging like last time."
+      ],
+      "Outraged": [
+        "Ugh, you again.",
+        "I can't believe I'm wasting time here.",
+        "Don't even think of giving me that smug grin, {vendor_name}.",
+        "You better redeem yourself today.",
+        "Let's get this over with before I change my mind."
+      ]
+    },
+    "Offer": {
+      "SunshineAndRainbows": [
+        "I'd be thrilled to pay {customer_offer} for that marvelous {item}!",
+        "This {item} deserves every coin of the {customer_offer} I offer!",
+        "{vendor_name}, your wares shine brighter than the sun—here's {customer_offer}.",
+        "You craft magic, and I'm enchanted! I'll gladly give {customer_offer}.",
+        "Worth every shiny coin! Here's {customer_offer} for that splendid {item}."
+      ],
+      "Happy": [
+        "{customer_offer} for the {item}—seems fair, doesn't it?",
+        "Here's my offer, {vendor_name}: {customer_offer}.",
+        "I think this {item} is worth {customer_offer}, and I hope you agree.",
+        "{customer_offer}—I think that's a good deal for both of us.",
+        "Care to accept {customer_offer} for that lovely piece?"
+      ],
+      "Neutral": [
+        "I'll give you {customer_offer} for it.",
+        "{customer_offer} is my offer.",
+        "That's worth {customer_offer} to me.",
+        "My offer is {customer_offer}.",
+        "How about {customer_offer}?"
+      ],
+      "Annoyed": [
+        "{customer_offer}—take it or leave it.",
+        "Don't expect more than {customer_offer} for that.",
+        "I've seen better items for less. Here's {customer_offer}.",
+        "This isn't worth more than {customer_offer}, and we both know it.",
+        "{customer_offer}. That's generous for what you're selling."
+      ],
+      "Outraged": [
+        "That shabby thing? {customer_offer} is more than enough!",
+        "You want more than {customer_offer} for that? Absurd.",
+        "Don't insult me—{customer_offer} is already too high.",
+        "{customer_offer}, and I'm being too kind.",
+        "You should be paying me to take that off your hands."
+      ]
+    },
+    "CounterOffer": {
+      "SunshineAndRainbows": [
+        "Oh, a bit more than {customer_offer}? Of course, your work deserves it!",
+        "You drive a hard bargain, {vendor_name}, but I like your style. Let's say {customer_offer}?",
+        "Hmm, I see your point! How about {customer_offer} instead?",
+        "You're charming, {vendor_name}. I'll raise my offer to {customer_offer}.",
+        "Alright, alright! For you, I can do {customer_offer}."
+      ],
+      "Happy": [
+        "Okay, I can stretch it to {customer_offer}.",
+        "Let's meet in the middle at {customer_offer}.",
+        "Alright, I'll go up to {customer_offer}.",
+        "You've got a deal if we say {customer_offer}.",
+        "That's higher than I wanted, but I'll accept {customer_offer}."
+      ],
+      "Neutral": [
+        "Fine, {customer_offer} it is.",
+        "I can do {customer_offer}.",
+        "Let's go with {customer_offer}.",
+        "Alright. {customer_offer}.",
+        "I suppose {customer_offer} is acceptable."
+      ],
+      "Annoyed": [
+        "{customer_offer}? You're pushing it.",
+        "You sure it's worth that much? {customer_offer} then.",
+        "I don't have all day—{customer_offer} it is.",
+        "Fine. {customer_offer}. Don't push your luck.",
+        "Let's just end this. {customer_offer}."
+      ],
+      "Outraged": [
+        "{customer_offer}? Are you trying to rob me?",
+        "That price is a joke. But fine. {customer_offer} and not a coin more.",
+        "You're bleeding me dry! {customer_offer}—final offer.",
+        "You better pray it's worth {customer_offer}.",
+        "Fine, but only because I'm desperate. {customer_offer}."
+      ]
+    },
+    "Accept": {
+      "SunshineAndRainbows": [
+        "Deal! You're a treasure, {vendor_name}.",
+        "What a perfect trade! Thank you, {vendor_name}!",
+        "We have a deal! Can't wait to show off this {item}.",
+        "You're as fair as your reputation suggests, {vendor_name}.",
+        "It's a pleasure doing business with you!"
+      ],
+      "Happy": [
+        "Sounds good to me!",
+        "We have a deal!",
+        "Great, I'll take it.",
+        "Deal. Thanks, {vendor_name}.",
+        "Pleasure trading with you."
+      ],
+      "Neutral": [
+        "Alright.",
+        "Deal.",
+        "Fair enough.",
+        "Okay, I'll take it.",
+        "Sure."
+      ],
+      "Annoyed": [
+        "Fine, whatever.",
+        "I guess that'll do.",
+        "Could've been cheaper, but fine.",
+        "Deal. Not happy about it.",
+        "Let's just finish this."
+      ],
+      "Outraged": [
+        "I hope this {item} is worth all this hassle.",
+        "That better not break the moment I touch it.",
+        "You bled me dry, {vendor_name}.",
+        "Robbery in daylight… fine.",
+        "Whatever. I'll take the cursed thing."
+      ]
+    },
+    "Decline": {
+      "SunshineAndRainbows": [
+        "Oh no, I can't do that—maybe next time!",
+        "Ah, not this time, dear {vendor_name}.",
+        "I'll pass today, but your wares are lovely!",
+        "Tempting, but I must decline for now.",
+        "Another day, perhaps!"
+      ],
+      "Happy": [
+        "Not today, I think.",
+        "I'll pass, but thank you.",
+        "Maybe next time.",
+        "Doesn't quite work for me.",
+        "I'm good for now."
+      ],
+      "Neutral": [
+        "No, thanks.",
+        "I'll pass.",
+        "Not interested.",
+        "That's a no.",
+        "Maybe later."
+      ],
+      "Annoyed": [
+        "Too expensive. No thanks.",
+        "You must be kidding. Pass.",
+        "Nope.",
+        "I'll find better elsewhere.",
+        "Try again next time."
+      ],
+      "Outraged": [
+        "What an insult of a price! No way.",
+        "You think I'm made of coin?! No!",
+        "Absolutely not!",
+        "You lost a customer today, {vendor_name}.",
+        "You're dreaming if you think that's fair."
+      ]
+    },
+    "Goodbye": {
+      "SunshineAndRainbows": [
+        "Until next time, {vendor_name}! Stay wonderful!",
+        "Farewell! May your stall shine forever!",
+        "What a joy! See you again soon!",
+        "Goodbye, and thank you for the delightful trade!",
+        "Best of days to you, my friend!"
+      ],
+      "Happy": [
+        "Take care, {vendor_name}!",
+        "See you around!",
+        "Enjoy the rest of your day!",
+        "I'll be back soon!",
+        "Goodbye for now!"
+      ],
+      "Neutral": [
+        "Bye.",
+        "Goodbye.",
+        "Later.",
+        "See you.",
+        "I'm off."
+      ],
+      "Annoyed": [
+        "Finally, done here.",
+        "Later, I guess.",
+        "Not coming back soon.",
+        "This better have been worth it.",
+        "I'm leaving."
+      ],
+      "Outraged": [
+        "Don't ever expect me back!",
+        "This was ridiculous!",
+        "Hope your stall collapses!",
+        "I regret this whole interaction!",
+        "You've got some nerve! Goodbye!"
+      ]
+    }
+  }
