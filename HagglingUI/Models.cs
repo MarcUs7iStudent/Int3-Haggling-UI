@@ -8,16 +8,6 @@ public enum Dialogue
     Goodbye
 }
 
-public enum Trait
-{
-    Rude,
-    Charming,
-    Stubborn,
-    WeakWilled,
-    Patient,
-    Emotional
-}
-
 public enum Mood
 {
     SunshineAndRainbows = 4,
