@@ -23,11 +23,6 @@ public interface IHuman
     Gender Gender { get; }
     
     /// <summary>
-    /// Traits of this person
-    /// </summary>
-    HashSet<Trait> Traits { get; }
-    
-    /// <summary>
     /// The marketplace this vendor does business in
     /// </summary>
     IMarketplace? CurrentMarketplace { get; }
@@ -36,6 +31,11 @@ public interface IHuman
     /// Things owned by this person
     /// </summary>
     List<Product> Inventory { get; }
+    
+    /// <summary>
+    /// Money owned by this person
+    /// </summary>
+    decimal Funds { get; }
     
     /// <summary>
     /// Processes the offer given by a vendor based on its reasonableness and traits of the vendor,
@@ -92,11 +92,6 @@ public interface IVendor : IHuman
 public interface ICustomer : IHuman
 {
     /// <summary>
-    /// A title describing the person's status e.g. "Travelling merchant" or "Local peasant"
-    /// </summary>
-    string Title { get; }
-    
-    /// <summary>
     /// List of all the things the customer wants to buy
     /// </summary>
     List<ProductType> BuyList { get; }
@@ -106,26 +101,23 @@ public interface ICustomer : IHuman
     /// from the current marketplace that he is in
     /// </summary>
     /// <returns> The vendor selected </returns>
-    IVendor SelectVendor();
-
+    IVendor? SelectVendor();
     /// <summary>
     /// Selects a product to trade for from the available inventory
     /// </summary>
     /// <param name="vendor"> the vendor to select products from</param>
     /// <returns> product selected </returns>
-    Product SelectProduct(IVendor vendor);
-
+    Product? SelectProduct(IVendor vendor);
     /// <summary>
     /// Asks for a product based on the buy list
     /// </summary>
     /// <returns> Product type asked for </returns>
-    ProductType AskForProduct();
-
+    ProductType? AskForProduct();
     /// <summary>
     /// Adds the products into own inventory and removes the necessary funds
     /// </summary>
     /// <param name="product"> product to add </param>
-    void BuyProduct(Product product);
+    bool BuyProduct(Product product, IVendor vendor);
 }
 
 public interface IMarketplace
