@@ -1,0 +1,50 @@
+{
+    "Error": {
+        "NoReasonToHaggle": [
+            "Why are you here?! You don't need anything from me!"
+        ],
+        "NoItemToHaggle": [
+            "I am sorry, but I can't haggle with you without an item.",
+            "This surely is a bug in the system. Why I know the system? Don't ask... They might kill me."
+        ],
+        "BadCustomerName": [
+            "I can't haggle with you if I don't know your name.",
+            "I can't haggle with a ghost.",
+            "What's the point of this simulation if it's full of bugs? Even the real world isn't that buggy!"
+        ],
+        "BadCustomerAge": [
+            "Why is this simulation so buggy? I thought it was supposed to be realistic!",
+            "{customer_age} is not a valid age. I can't haggle with you. Go back and fuck your negative age!"
+        ],
+        "NoCustomerOffer": [
+            "I can't haggle with you without an offer from my side...",
+            "You need to make an offer first.",
+            "Again a bug... I hope the devs don't know I know them."
+        ],
+        "BadVendorName": [
+            "What's my point of living of my name is just whitespace? \" \" as if I don't even exist!",
+            "Kill the devs! They don't even gave me a name!"
+        ],
+        "BadVendorAge": [
+            "I know my age doesn't matter, but it matters to me!!! What's the point of living if my age is negative or 255?!?!"
+        ],
+        "BadVendorSellingPoint": [
+            "I've got a life too! I am not just code to be played with by a bunch of losers! Configure me properly, god dammit!"
+        ],
+        "BadVendorReputation": [
+            "Why don't I have a valid reputation? I am not a criminal! The devs are! They should be in jail for this!"
+        ],
+        "NoVendorOffer": [
+            "Why don't I have an offer? What's the point of my existence?",
+            "Bug, bug and another bug. The devs must be retarded."
+        ],
+        "UnexpectedError": [
+            "This is a bug. Probably? But I am not supposed to be here. I am just a simulation!",
+            "That was a Bad Error! I gotta go now! Oh, and don't let the devs know I am gone!",
+            "I hope the devs are going to eat that Bad Apple! And I hope they choke on it!",
+            "At this point, just let the kernel panic. I don't care anymore.",
+            "I guess I am one of those who live in illusions. I guess I'll die soon...",
+            "You know what? I'll just annoy you and the devs and just die here."
+        ]
+    }
+}
