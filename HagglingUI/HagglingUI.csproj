@@ -11,4 +11,8 @@
       <Folder Include="Dialogs\" />
     </ItemGroup>
 
+    <ItemGroup>
+        <EmbeddedResource Include="Data\*.json" />
+    </ItemGroup>
+    
 </Project>
