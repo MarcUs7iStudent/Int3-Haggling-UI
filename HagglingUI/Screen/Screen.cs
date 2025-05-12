@@ -1,4 +1,5 @@
-﻿using Haggling;
+﻿using HagglingContracts.Interfaces;
+using HagglingContracts.Models;
 
 namespace HagglingUI.Screen;
 

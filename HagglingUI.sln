@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HagglingUI", "HagglingUI\Ha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HagglingUI.Test", "HagglingUI.Test\HagglingUI.Test.csproj", "{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HagglingContracts", "HagglingContracts\HagglingContracts.csproj", "{ACC0A3B3-9ADC-4BB5-BF76-78488F0FE882}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC0A3B3-9ADC-4BB5-BF76-78488F0FE882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC0A3B3-9ADC-4BB5-BF76-78488F0FE882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC0A3B3-9ADC-4BB5-BF76-78488F0FE882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC0A3B3-9ADC-4BB5-BF76-78488F0FE882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

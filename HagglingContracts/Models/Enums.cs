@@ -1,3 +1,5 @@
+﻿namespace HagglingContracts.Models;
+
 public enum Dialogue
 {
     Greeting,
@@ -42,7 +44,3 @@ public enum Reputation
     Deceitful,
     Unknown
 }
-
-public record Product (uint Id, string Name, decimal Price, ProductType Type);
-
-public record Offer (Product Product, decimal NewPrice, decimal OldPrice);
