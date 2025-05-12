@@ -6,11 +6,13 @@ on:
     branches: [main]
     paths:
       - 'HagglingUI/**'
+      - 'HagglingUI.Test/**'
       - '.github/workflows/tests.yml'
   pull_request:
     branches: [main]
     paths:
       - 'HagglingUI/**'
+      - 'HagglingUI.Test/**'
       - '.github/workflows/tests.yml'
 
 jobs:
