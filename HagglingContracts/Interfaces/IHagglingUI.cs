@@ -1,8 +1,8 @@
-﻿using Haggling;
+﻿using HagglingContracts.Models;
 
-namespace HagglingUI;
+namespace HagglingContracts.Interfaces;
 
-public interface IHagglingUserInterface
+public interface IHagglingUI
 {
     /// <summary>
     /// Prints the customer asking for a specific type of product

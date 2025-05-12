@@ -1,11 +1,11 @@
-using Haggling;
 using HagglingUI.Audio;
-using HagglingUI.Dialogs;
 using HagglingUI.Screen;
+using HagglingContracts.Models;
+using HagglingContracts.Interfaces;
 
 namespace HagglingUI;
 
-public class HagglingUserInterface : IHagglingUserInterface
+public class HagglingUserInterface : IHagglingUI
 {
     private readonly IScreen _screen = new Screen.Screen();
     private readonly IAudio _audio = new Audio.Audio();
