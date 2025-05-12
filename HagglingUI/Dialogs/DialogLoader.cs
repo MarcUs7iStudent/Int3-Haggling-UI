@@ -13,16 +13,16 @@ public static class DialogLoader
     /// </summary>
     /// <typeparam name="T">Type to deserialize to</typeparam>
     /// <param name="resourceName">Name of the JSON file</param>
+    /// <param name="assembly">Used only for unit tests</param>
     /// <returns>Deserialized object or default if not found</returns>
-    public static T? LoadDialogue<T>(string resourceName)
+    public static T? LoadDialogue<T>(string resourceName, Assembly? assembly = null)
     {
-        var assembly = Assembly.GetExecutingAssembly();
+        assembly ??= Assembly.GetExecutingAssembly();
         var fullResourceName = $"HagglingUI.Data.{resourceName}";
         
         using var stream = assembly.GetManifestResourceStream(fullResourceName);
         if (stream == null)
         {
-            Console.Error.WriteLine($"Error: Could not find embedded resource '{fullResourceName}'");
             return default;
         }
         
@@ -38,7 +38,6 @@ public static class DialogLoader
         }
         catch (JsonException ex)
         {
-            Console.Error.WriteLine($"Error deserializing '{resourceName}': {ex.Message}");
             return default;
         }
     }
@@ -46,16 +45,17 @@ public static class DialogLoader
     /// <summary>
     /// Load all dialogue files needed for the UI
     /// </summary>
+    /// <param name="assembly">Used only for unit tests</param>
     /// <returns>Tuple containing all dialogue dictionaries</returns>
     public static (
         Dictionary<string, Dictionary<string, List<string>>>? CustomerDialogues,
         Dictionary<string, Dictionary<string, List<string>>>? VendorDialogues,
         Dictionary<string, Dictionary<string, List<string>>>? ErrorDialogues
-    ) LoadAllDialogues()
+    ) LoadAllDialogues(Assembly? assembly = null)
     {
-        var customerDialogues = LoadDialogue<Dictionary<string, Dictionary<string, List<string>>>>("customer-dialogue.json");
-        var vendorDialogues = LoadDialogue<Dictionary<string, Dictionary<string, List<string>>>>("vendor-dialogue.json");
-        var errorDialogues = LoadDialogue<Dictionary<string, Dictionary<string, List<string>>>>("error-dialogue.json");
+        var customerDialogues = LoadDialogue<Dictionary<string, Dictionary<string, List<string>>>>("customer-dialog.json", assembly);
+        var vendorDialogues = LoadDialogue<Dictionary<string, Dictionary<string, List<string>>>>("vendor-dialog.json", assembly);
+        var errorDialogues = LoadDialogue<Dictionary<string, Dictionary<string, List<string>>>>("error-dialog.json", assembly);
         
         return (customerDialogues, vendorDialogues, errorDialogues);
     }

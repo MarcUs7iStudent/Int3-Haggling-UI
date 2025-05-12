@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HagglingUI", "HagglingUI\HagglingUI.csproj", "{4FAE6F27-4BB9-4492-90B1-87729003476A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HagglingUI.Test", "HagglingUI.Test\HagglingUI.Test.csproj", "{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{4FAE6F27-4BB9-4492-90B1-87729003476A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FAE6F27-4BB9-4492-90B1-87729003476A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FAE6F27-4BB9-4492-90B1-87729003476A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A4DFD9-EAA4-442C-A3B1-D5700D1A542E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
