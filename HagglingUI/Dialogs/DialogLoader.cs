@@ -36,7 +36,7 @@ public static class DialogLoader
                 PropertyNameCaseInsensitive = true
             });
         }
-        catch (JsonException ex)
+        catch
         {
             return default;
         }
