@@ -8,11 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Dialogs\" />
-    </ItemGroup>
-
-    <ItemGroup>
         <EmbeddedResource Include="Data\*.json" />
+        <EmbeddedResource Include="Data\*.mp3" />
     </ItemGroup>
     
 </Project>

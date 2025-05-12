@@ -1,36 +1,34 @@
 using Haggling;
+using HagglingUI.Audio;
+using HagglingUI.Dialogs;
+using HagglingUI.Screen;
 
 namespace HagglingUI;
 
 public class HagglingUserInterface : IHagglingUserInterface
 {
-    public void PrintInitialQuestion(IHuman customerAsking, ProductType productType)
-    {
-        Console.WriteLine("PrintInitialQuestion called");
-    }
+    private readonly IScreen _screen = new Screen.Screen();
+    private readonly IAudio _audio = new Audio.Audio();
 
-    public void PrintDialogue(Dialogue dialogue, IHuman personTalking, Offer? offer = null)
-    {
-        Console.WriteLine("PrintDialogue called");
-    }
+    public bool PrintInitialQuestion(IHuman customerAsking, ProductType productType) => _screen.PrintInitialQuestion(customerAsking, productType);
 
-    public void PrintTradeDetails(IHuman customer, IHuman vendor, Product product)
-    {
-        Console.WriteLine("PrintTradeDetails called");
-    }
+    public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, Offer? offer = null) => _screen.PrintDialogue(dialogue, personTalking, offer);
 
-    public void PrintTradeResult(IHuman customer, IHuman vendor, Offer finalOffer)
-    {
-        Console.WriteLine("PrintTradeResult called");
-    }
+    public bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product) => _screen.PrintTradeDetails(customer, vendor, product);
 
-    public void PrintPersonIntroduction(IHuman person)
-    {
-        Console.WriteLine("PrintPersonIntroduction called");
-    }
+    public bool PrintTradeResult(IHuman customer, IHuman vendor, Offer finalOffer) => _screen.PrintTradeResult(customer, vendor, finalOffer);
 
-    public void PrintPersonInfo(IHuman person)
-    {
-        Console.WriteLine("PrintPersonInfo called");
-    }
+    public bool PrintPersonIntroduction(IHuman person) => _screen.PrintPersonIntroduction(person);
+
+    public bool PrintPersonInfo(IHuman person) => _screen.PrintPersonInfo(person);
+
+    public bool PrintError(string errorMessage) => _screen.PrintError(errorMessage);
+
+    public bool ClearScreen() => _screen.ClearScreen();
+
+    public bool PlayAudio() => _audio.PlayAudio();
+
+    public bool PauseAudio() => _audio.PauseAudio();
+    
+    public bool StopAudio() => _audio.StopAudio();
 }
