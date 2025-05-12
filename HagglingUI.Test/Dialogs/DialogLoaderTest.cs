@@ -4,7 +4,7 @@ using HagglingUI.Dialogs;
 using Moq;
 using Xunit;
 
-namespace HagglingUI.Test;
+namespace HagglingUI.Test.Dialogs;
 
 public class DialogLoaderTests
 {

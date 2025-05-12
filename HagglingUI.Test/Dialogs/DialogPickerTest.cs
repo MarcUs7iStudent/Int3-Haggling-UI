@@ -1,4 +1,4 @@
-﻿namespace HagglingUI.Test;
+﻿namespace HagglingUI.Test.Dialogs;
 
 public class DialogPickerTest
 {
