@@ -1,0 +1,36 @@
+name: Run HagglingUI Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'HagglingUI/**'
+      - '.github/workflows/tests.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'HagglingUI/**'
+      - '.github/workflows/tests.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.0.x'
+      
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build solution
+      run: dotnet build --configuration Release --no-restore
+      
+    - name: Run tests
+      run: dotnet test HagglingUI.Tests/HagglingUI.Tests.csproj --configuration Release --no-build --verbosity normal --logger "console;verbosity=detailed"
