@@ -1,0 +1,104 @@
+{
+    "Greeting": {
+        "SunshineAndRainbows": [
+            ""
+        ],
+        "Happy": [
+            ""
+        ],
+        "Neutral": [
+            ""
+        ],
+        "Annoyed": [
+            ""
+        ],
+        "Outraged": [
+            ""
+        ]
+    },
+    "Offer": {
+        "SunshineAndRainbows": [
+            ""
+        ],
+        "Happy": [
+            ""
+        ],
+        "Neutral": [
+            ""
+        ],
+        "Annoyed": [
+            ""
+        ],
+        "Outraged": [
+            ""
+        ]
+    },
+    "CounterOffer": {
+        "SunshineAndRainbows": [
+            ""
+        ],
+        "Happy": [
+            ""
+        ],
+        "Neutral": [
+            ""
+        ],
+        "Annoyed": [
+            ""
+        ],
+        "Outraged": [
+            ""
+        ]
+    },
+    "Accept": {
+        "SunshineAndRainbows": [
+            ""
+        ],
+        "Happy": [
+            ""
+        ],
+        "Neutral": [
+            ""
+        ],
+        "Annoyed": [
+            ""
+        ],
+        "Outraged": [
+            ""
+        ]
+    },
+    "Decline": {
+        "SunshineAndRainbows": [
+            ""
+        ],
+        "Happy": [
+            ""
+        ],
+        "Neutral": [
+            ""
+        ],
+        "Annoyed": [
+            ""
+        ],
+        "Outraged": [
+            ""
+        ]
+    },
+    "Goodbye": {
+        "SunshineAndRainbows": [
+            ""
+        ],
+        "Happy": [
+            ""
+        ],
+        "Neutral": [
+            ""
+        ],
+        "Annoyed": [
+            ""
+        ],
+        "Outraged": [
+            ""
+        ]
+    }
+}
