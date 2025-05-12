@@ -28,11 +28,8 @@ jobs:
       with:
         dotnet-version: '9.0.x'
       
-    - name: Restore dependencies
-      run: dotnet restore
-      
     - name: Build solution
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release
       
     - name: Run tests
       run: dotnet test HagglingUI.Test/HagglingUI.Test.csproj --configuration Release --no-build --logger "console;verbosity=detailed"
