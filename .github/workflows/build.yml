@@ -24,6 +24,8 @@ jobs:
     - name: Upload DLL to GitHub Release
       uses: softprops/action-gh-release@v2
       with:
-        files: HagglingUI/bin/Release/net9.0/HagglingUI.dll
+        files: |
+          HagglingUI/bin/Release/net9.0/HagglingUI.dll
+          HagglingContracts/bin/Release/net9.0/HagglingContracts.dll
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
