@@ -56,8 +56,24 @@ public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partne
 
     public bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product)
     {
-        Console.WriteLine("PrintTradeDetails called");
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        } 
+
+        var tradeDetailsTable = new Table()
+            .Border(TableBorder.Rounded)
+            .Title("[bold]Trade Details[/]")
+            .AddColumn("")
+            .AddColumn("");
+
+        tradeDetailsTable.AddRow("Customer", $"[pink]{customer.Name}[/] ([italic]{customer.Mood}[/])");
+        tradeDetailsTable.AddRow("Vendor", $"[pink]{vendor.Name}[/] ([italic]{vendor.Mood}[/])");
+        tradeDetailsTable.AddRow("Product", $"[cyan]{product.Name}[/] - [green]{product.Type}[/] - [green]€{product.Price:F2}[/]");
+
+        AnsiConsole.Write(tradeDetailsTable);
+
+        return true;
     }
     /// <summary>
     /// Print the result (final price, etc.)
