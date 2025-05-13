@@ -25,11 +25,34 @@ public class Screen : IScreen
         return true;
     }
 
-    public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null)
+public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null)
+{
+    if (!ConsoleCheck.IsConsoleAttached())
     {
-        Console.WriteLine("PrintDialogue called");
         return false;
     }
+
+    var dialogPicker = new HagglingUI.Dialogs.DialogPicker();
+    var isCustomer = personTalking is ICustomer;
+    
+    string selected = isCustomer 
+        ? dialogPicker.GetCustomerDialogue(dialogue, personTalking.Mood)
+        : dialogPicker.GetVendorDialogue(dialogue, personTalking.Mood);
+    
+    if (string.IsNullOrEmpty(selected))
+    {
+        return false;
+    }
+
+    var formattedDialog = offer != null
+        ? Dialogs.DialogHelper.FormatDialog(selected, isCustomer ? partner : personTalking, 
+            isCustomer ? personTalking : partner, 
+            offer.Product, offer.NewPrice, offer.OldPrice)
+        : selected; 
+
+    AnsiConsole.MarkupLine($"[cyan]{personTalking.Name}[/]: {formattedDialog}");
+    return true;
+}
 
     public bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product)
     {
@@ -69,8 +92,18 @@ public class Screen : IScreen
 
     public bool PrintPersonIntroduction(IHuman person)
     {
-        Console.WriteLine("PrintPersonIntroduction called");
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
+
+        string roleDesc = person is IVendor ? "[green]Vendor[/]" : 
+                         (person is ICustomer ? "[blue]Customer[/]" : "");
+        
+        AnsiConsole.Write(new Panel($"{roleDesc}: [bold]{person.Name}[/], {person.Gender}, age {person.Age}")
+            .Border(BoxBorder.Rounded)
+            .BorderColor(Color.Yellow));
+        return true;
     }
 
     public bool PrintPersonInfo(IHuman person)
