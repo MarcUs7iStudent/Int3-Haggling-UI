@@ -7,38 +7,41 @@ public interface IHagglingUI
     /// <summary>
     /// Prints the customer asking for a specific type of product
     /// </summary>
-    /// <param name="customerAsking"> customer asking for a product </param>
-    /// <param name="productType"> the product customer is looking for </param>
+    /// <param name="customerAsking">Customer asking for a product</param>
+    /// <param name="vendor">The Vendor</param>
+    /// <param name="productType">The product customer is looking for</param>
     /// <returns>True if it could print, False if console is not attached or another error occurred.</returns>
-    bool PrintInitialQuestion(IHuman customerAsking, ProductType productType);
+    bool PrintInitialQuestion(IHuman customerAsking, IHuman vendor, ProductType productType);
     
     /// <summary>
     /// Prints the action the customer is taking and
     /// a line of dialogue based on the customer and if needed the offer they are making
     /// </summary>
-    /// <param name="dialogue"> dialogue to select </param>
-    /// <param name="personTalking"> person talking </param>
-    /// <param name="offer"> offer being made </param>
+    /// <param name="dialogue">Dialogue to select</param>
+    /// <param name="personTalking">Person talking</param>
+    /// <param name="partner">The partner it is currently talking to</param>
+    /// <param name="offer">Offer being made</param>
     /// <returns>True if it could print, False if console is not attached or another error occurred.</returns>
-    bool PrintDialogue(Dialogue dialogue, IHuman personTalking, Offer? offer = null);
+    bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null);
 
     /// <summary>
     /// Prints are necessary trade details
     /// </summary>
-    /// <param name="customer"> customer in the trade </param>
-    /// <param name="vendor"> vendor in the trade </param>
-    /// <param name="product"> product being traded for </param>
+    /// <param name="customer">Customer in the trade</param>
+    /// <param name="vendor">Vendor in the trade</param>
+    /// <param name="product">Product being traded for</param>
     /// <returns>True if it could print, False if console is not attached or another error occurred.</returns>
     bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product);
 
     /// <summary>
     /// Prints the final result of the trade
     /// </summary>
-    /// <param name="customer"> customer in the trade </param>
-    /// <param name="vendor"> vendor in the trade </param>
-    /// <param name="finalOffer"> final offer in the trade </param>
+    /// <param name="personOffering">A duplicate of the person makeing the offer</param>
+    /// <param name="customer">Customer in the trade</param>
+    /// <param name="vendor">Vendor in the trade</param>
+    /// <param name="finalOffer">Final offer in the trade</param>
     /// <returns>True if it could print, False if console is not attached or another error occurred.</returns>
-    bool PrintTradeResult(IHuman customer, IHuman vendor, Offer finalOffer);
+    bool PrintTradeResult(IHuman personOffering, IHuman customer, IHuman vendor, Offer finalOffer);
 
     /// <summary>
     /// Prints the introduction of a person e.g. "John, a local peasant"
