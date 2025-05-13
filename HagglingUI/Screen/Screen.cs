@@ -8,6 +8,8 @@ public class Screen : IScreen
 {
     public bool PrintInitialQuestion(IHuman customerAsking, IHuman vendor, ProductType productType)
     {
+        ConsoleCheck.IsConsoleAttached();
+        
         var dialogPicker = new DialogPicker();
         string customerQuestion = dialogPicker.GetCustomerDialogue(Dialogue.Greeting, customerAsking.Mood);
         
@@ -46,6 +48,8 @@ public class Screen : IScreen
 
     public bool PrintPersonInfo(IHuman person)
     {
+        ConsoleCheck.IsConsoleAttached();
+        
         var grid = new Grid();
         grid.AddColumn();
         grid.AddRow(new Text($"Person Information", new Style(Color.Blue, Color.Grey, Decoration.Bold)).Centered());
