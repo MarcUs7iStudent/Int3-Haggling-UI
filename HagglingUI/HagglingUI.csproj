@@ -14,7 +14,7 @@
     <ItemGroup>
         <!--<ProjectReference Include="..\HagglingContracts\HagglingContracts.csproj" />-->
         <Reference Include="HagglingContracts">
-            <HintPath>HagglingContracts.dll</HintPath>
+            <HintPath>../HagglingContracts.dll</HintPath>
         </Reference>
     </ItemGroup>
 

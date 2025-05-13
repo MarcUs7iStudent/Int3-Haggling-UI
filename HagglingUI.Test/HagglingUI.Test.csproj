@@ -22,7 +22,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HagglingUI\HagglingUI.csproj" />
+        <ProjectReference Include="..\HagglingUI\HagglingUI.csproj" />
+        <Reference Include="HagglingContracts">
+            <HintPath>../HagglingContracts.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
 </Project>
