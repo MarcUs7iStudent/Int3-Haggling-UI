@@ -38,11 +38,35 @@ public class Screen : IScreen
         Console.WriteLine("PrintTradeDetails called");
         return false;
     }
-
+    /// <summary>
+    /// Print the result (final price, etc.)
+    /// </summary>
+    /// <param name="personOffering"></param>
+    /// <param name="customer"></param>
+    /// <param name="vendor"></param>
+    /// <param name="finalOffer"></param>
+    /// <returns>False if no Console is attached, else print the result . </returns>
     public bool PrintTradeResult(IHuman personOffering, IHuman customer, IHuman vendor, Offer finalOffer)
     {
-        Console.WriteLine("PrintTradeResult called");
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
+        var tradeSummaryTable = new Table()
+                                .Border(TableBorder.Rounded)
+                                .Title("[bold]Trade Summary[/]")
+                                .AddColumn("")
+                                .AddColumn("");
+
+        tradeSummaryTable.AddRow("[green]✓ Deal Completed![/]", "");
+        tradeSummaryTable.AddRow("",
+                                 $"[grey]{finalOffer.Product.Name} bought for [bold]{finalOffer.NewPrice} coins[/].[/]");
+        tradeSummaryTable.AddRow("",
+                                 $"Customer is [green]{customer.Mood}[/], Vendor is [yellow]{vendor.Mood}[/]");
+
+        AnsiConsole.Write(tradeSummaryTable);
+
+        return true;
     }
 
     public bool PrintPersonIntroduction(IHuman person)
