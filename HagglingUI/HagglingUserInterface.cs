@@ -9,64 +9,7 @@ public class HagglingUserInterface : IHagglingUI
 {
     private readonly IScreen _screen = new Screen.Screen();
 
-    public bool PrintInitialQuestion(IHuman customerAsking, IHuman vendor, ProductType productType)
-    {
-        string question = productType switch
-    {
-        ProductType.Food => "[green]food items[/]",
-        ProductType.Clothing => "[blue]clothing[/]",
-        ProductType.Dishware => "[yellow]dishware[/]",
-        ProductType.Tool => "[orange]tools[/]",
-        ProductType.Furniture => "[purple]furniture[/]",
-        ProductType.Luxury => "[gold]luxury goods[/]",
-        _ => "[grey]items[/]"
-    };
-        
-    var grid = new Grid()
-        .AddColumns(2)
-        .AddRow(
-            new Panel(
-                new Rows(
-                    new Markup($"[bold yellow]Customer:[/] {customerAsking.Name}"),
-                    new Markup($"[grey]Mood:{customerAsking.Mood}[/]"),
-                    new Markup($"[grey]Funds: {customerAsking.Funds:C}[/]")
-                ))
-            {
-                Border = BoxBorder.Rounded,
-                Padding = new Padding(1)
-            },
-            new Panel(
-                new Rows(
-                    new Markup($"[bold cyan]Vendor:[/] {vendor.Name}"),
-                    new Markup($"[grey]Mood:{vendor.Mood}[/]"),
-                    new Markup($"[grey]Market: {vendor.CurrentMarketplace!.ToString() ?? "None"}[/]")
-                ))
-            {
-                Border = BoxBorder.Rounded,
-                Padding = new Padding(1)
-            }
-        );
-    var dialogPanel = new Panel(
-        new Rows(
-            new Markup($"[bold]{customerAsking.Name}[/] asks [bold]{vendor.Name}[/]:"),
-            new Markup($"[white]\"Do you have any {question} available?\"[/]"),
-            new Text("")
-        ))
-    {
-        Border = BoxBorder.Double,
-        Header = new PanelHeader(" Initial Question ", Justify.Center),
-        Padding = new Padding(2, 1, 2, 1)
-    };
-    
-    var layout = new Layout("Root")
-        .SplitRows(
-            new Layout("Dialog", dialogPanel),
-            new Layout("Participants", grid)
-        );
-
-        AnsiConsole.Write(layout);
-        return true;
-    }
+    public bool PrintInitialQuestion(IHuman customerAsking, IHuman vendor, ProductType productType) => _screen.PrintInitialQuestion(customerAsking, vendor, productType);
 
     public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null) => _screen.PrintDialogue(dialogue, personTalking, partner, offer);
 
