@@ -47,16 +47,18 @@ public class Screen : IScreen
 
     public bool PrintPersonIntroduction(IHuman person)
     {
-        if (Console.IsOutputRedirected || !Environment.UserInteractive)
+        if (!ConsoleCheck.IsConsoleAttached())
         {
             return false;
         }
 
-        var panel = new Panel($"[bold]{person.Name}[/], {person.Gender}, age {person.Age}")
-            .Border(BoxBorder.Rounded)
-            .BorderColor(Color.Yellow);
+        string roleDesc = person is IVendor ? "[green]Vendor[/]" : 
+                         (person is ICustomer ? "[blue]Customer[/]" : "");
         
-        AnsiConsole.Write(panel);
+        AnsiConsole.Write(new Panel($"{roleDesc}: [bold]{person.Name}[/], {person.Gender}, age {person.Age}")
+            .Border(BoxBorder.Rounded)
+            .BorderColor(Color.Yellow));
+        
         return true;
     }
 
