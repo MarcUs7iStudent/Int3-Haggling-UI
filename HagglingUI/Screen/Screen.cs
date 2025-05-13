@@ -193,13 +193,26 @@ public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partne
 
     public bool PrintError(DialogueError dialogueError, string errorMessage)
     {
-        Console.WriteLine("PrintError called");
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
+
+        ClearScreen();
+        AnsiConsole.MarkupLine($"[red]Error:[/] {dialogueError}");
+        AnsiConsole.MarkupLine($"[red]The real real error ;) {errorMessage}[/]");
+        AnsiConsole.MarkupLine("[red]Please report this error to the ppl who made it![/]");
+        return true;
     }
 
     public bool ClearScreen()
     {
-        Console.WriteLine("ClearScreen called");
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
+        
+        AnsiConsole.Clear();
+        return true;
     }
 }
