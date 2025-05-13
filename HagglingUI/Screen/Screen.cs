@@ -27,11 +27,39 @@ public class Screen : IScreen
         return true;
     }
 
-    public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null)
+public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null)
+{
+    if (!ConsoleCheck.IsConsoleAttached())
     {
-        Console.WriteLine("PrintDialogue called");
         return false;
     }
+
+    var isCustomer = personTalking is HagglingContracts.Interfaces.ICustomer;
+    var (customerDialogs, vendorDialogs, _) = Dialogs.DialogLoader.LoadAllDialogues();
+
+    var allDialogues = isCustomer ? customerDialogs : vendorDialogs;
+    if (allDialogues == null || !allDialogues.TryGetValue(dialogue.ToString(), out var moodDict))
+    {
+        return false;
+    }
+
+    if (!moodDict.TryGetValue(personTalking.Mood.ToString(), out var lines) || lines.Count == 0)
+    {
+        return false;
+    }
+
+    var random = new Random();
+    var selected = lines[random.Next(lines.Count)];
+
+    var formattedDialog = offer != null
+        ? Dialogs.DialogHelper.FormatDialog(selected, isCustomer ? partner : personTalking, 
+        isCustomer ? personTalking : partner, 
+        offer.Product, offer.NewPrice, offer.OldPrice)
+        : selected; 
+
+    AnsiConsole.MarkupLine($"[cyan]{personTalking.Name}[/]: {formattedDialog}");
+    return true;
+}
 
     public bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product)
     {
