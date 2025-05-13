@@ -60,7 +60,7 @@ public interface IScreen
     /// </summary>
     /// <param name="errorMessage">The actual error message</param>
     /// <returns>True if it could print, False if console is not attached or another error occurred.</returns>
-    bool PrintError(string errorMessage);
+    bool PrintError(DialogueError dialogueError, string errorMessage);
 
     /// <summary>
     /// Clears the screen
