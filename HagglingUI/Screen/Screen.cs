@@ -25,34 +25,34 @@ public class Screen : IScreen
         return true;
     }
 
-public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null)
-{
-    if (!ConsoleCheck.IsConsoleAttached())
+    public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null)
     {
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
+
+        var dialogPicker = new HagglingUI.Dialogs.DialogPicker();
+        var isCustomer = personTalking is ICustomer;
+        
+        string selected = isCustomer 
+            ? dialogPicker.GetCustomerDialogue(dialogue, personTalking.Mood)
+            : dialogPicker.GetVendorDialogue(dialogue, personTalking.Mood);
+        
+        if (string.IsNullOrEmpty(selected))
+        {
+            return false;
+        }
+
+        var formattedDialog = offer != null
+            ? Dialogs.DialogHelper.FormatDialog(selected, isCustomer ? partner : personTalking, 
+                isCustomer ? personTalking : partner, 
+                offer.Product, offer.NewPrice, offer.OldPrice)
+            : selected; 
+
+        AnsiConsole.MarkupLine($"[cyan]{personTalking.Name}[/]: {formattedDialog}");
+        return true;
     }
-
-    var dialogPicker = new HagglingUI.Dialogs.DialogPicker();
-    var isCustomer = personTalking is ICustomer;
-    
-    string selected = isCustomer 
-        ? dialogPicker.GetCustomerDialogue(dialogue, personTalking.Mood)
-        : dialogPicker.GetVendorDialogue(dialogue, personTalking.Mood);
-    
-    if (string.IsNullOrEmpty(selected))
-    {
-        return false;
-    }
-
-    var formattedDialog = offer != null
-        ? Dialogs.DialogHelper.FormatDialog(selected, isCustomer ? partner : personTalking, 
-            isCustomer ? personTalking : partner, 
-            offer.Product, offer.NewPrice, offer.OldPrice)
-        : selected; 
-
-    AnsiConsole.MarkupLine($"[cyan]{personTalking.Name}[/]: {formattedDialog}");
-    return true;
-}
 
     public bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product)
     {
@@ -75,14 +75,7 @@ public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partne
 
         return true;
     }
-    /// <summary>
-    /// Print the result (final price, etc.)
-    /// </summary>
-    /// <param name="personOffering"></param>
-    /// <param name="customer"></param>
-    /// <param name="vendor"></param>
-    /// <param name="finalOffer"></param>
-    /// <returns>False if no Console is attached, else print the result . </returns>
+
     public bool PrintTradeResult(IHuman personOffering, IHuman customer, IHuman vendor, Offer finalOffer)
     {
         if (!ConsoleCheck.IsConsoleAttached())
