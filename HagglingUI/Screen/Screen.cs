@@ -47,8 +47,17 @@ public class Screen : IScreen
 
     public bool PrintPersonIntroduction(IHuman person)
     {
-        Console.WriteLine("PrintPersonIntroduction called");
-        return false;
+        if (Console.IsOutputRedirected || !Environment.UserInteractive)
+        {
+            return false;
+        }
+
+        var panel = new Panel($"[bold]{person.Name}[/], {person.Gender}, age {person.Age}")
+            .Border(BoxBorder.Rounded)
+            .BorderColor(Color.Yellow);
+        
+        AnsiConsole.Write(panel);
+        return true;
     }
 
     public bool PrintPersonInfo(IHuman person)
