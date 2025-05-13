@@ -1,6 +1,6 @@
 ﻿using HagglingContracts.Interfaces;
 using HagglingContracts.Models;
-
+using Spectre.Console;
 namespace HagglingUI.Screen;
 
 public class Screen : IScreen
@@ -37,8 +37,14 @@ public class Screen : IScreen
 
     public bool PrintPersonInfo(IHuman person)
     {
-        Console.WriteLine("PrintPersonInfo called");
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
+
+        AnsiConsole.WriteLine($"Customer: {person.Name}, age {person.Age}");
+            
+        return true;
     }
 
     public bool PrintError(string errorMessage)
