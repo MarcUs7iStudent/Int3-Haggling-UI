@@ -10,11 +10,13 @@ public class Screen : IScreen
     {
         var dialogPicker = new DialogPicker();
         string customerQuestion = dialogPicker.GetCustomerDialogue(Dialogue.Greeting, customerAsking.Mood);
-        string vendorResponse = dialogPicker.GetVendorDialogue(Dialogue.Greeting, vendor.Mood);
-
-        AnsiConsole.MarkupLine($"[yellow]{customerAsking.Name}[/]: {customerQuestion}");
-        AnsiConsole.MarkupLine($"[cyan]{vendor.Name}[/]: {vendorResponse}");
-
+        
+        decimal offer = 0M;
+        Product product = new Product(1, "Sample Product", 10M, ProductType.Clothing);
+        
+        string formatedDialog = DialogHelper.FormatDialog(customerQuestion,vendor,customerAsking, product, offer, offer);
+        AnsiConsole.MarkupLine($"[yellow]" + formatedDialog);
+        
         return true;
     }
 
