@@ -10,6 +10,21 @@ public enum Dialogue
     Goodbye
 }
 
+public enum DialogueError
+{
+    NoReasonToHaggle,
+    NoItemToHaggle,
+    BadCustomerName,
+    BadCustomerAge,
+    NoCustomerOffer,
+    BadVendorName,
+    BadVendorAge,
+    BadVendorSellingPoint,
+    BadVendorReputation,
+    NoVendorOffer,
+    UnexpectedError
+}
+
 public enum Mood
 {
     SunshineAndRainbows = 4,

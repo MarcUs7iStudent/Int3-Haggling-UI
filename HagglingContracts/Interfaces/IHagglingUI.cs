@@ -57,9 +57,10 @@ public interface IHagglingUI
     /// <summary>
     /// Clears the screen, prints a funny error message and afterward the actual error message
     /// </summary>
+    /// <param name="dialogueError">The type of error</param>
     /// <param name="errorMessage">The actual error message</param>
     /// <returns>True if it could print, False if console is not attached or another error occurred.</returns>
-    bool PrintError(string errorMessage);
+    bool PrintError(DialogueError dialogueError, string errorMessage);
 
     /// <summary>
     /// Clears the screen
