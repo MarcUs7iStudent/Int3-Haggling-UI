@@ -8,7 +8,10 @@ public class Screen : IScreen
 {
     public bool PrintInitialQuestion(IHuman customerAsking, IHuman vendor, ProductType productType)
     {
-        ConsoleCheck.IsConsoleAttached();
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
         
         var dialogPicker = new DialogPicker();
         string customerQuestion = dialogPicker.GetCustomerDialogue(Dialogue.Greeting, customerAsking.Mood);
@@ -48,7 +51,10 @@ public class Screen : IScreen
 
     public bool PrintPersonInfo(IHuman person)
     {
-        ConsoleCheck.IsConsoleAttached();
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
         
         var grid = new Grid();
         grid.AddColumn();
