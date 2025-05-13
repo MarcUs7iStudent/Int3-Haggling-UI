@@ -156,7 +156,12 @@ public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partne
 
     public bool ClearScreen()
     {
-        Console.WriteLine("ClearScreen called");
-        return false;
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
+        
+        AnsiConsole.Clear();
+        return true;
     }
 }
