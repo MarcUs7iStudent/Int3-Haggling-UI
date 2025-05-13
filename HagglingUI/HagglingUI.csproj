@@ -8,7 +8,6 @@
 
     <ItemGroup>
         <EmbeddedResource Include="Data\*.json" />
-        <EmbeddedResource Include="Data\*.mp3" />
     </ItemGroup>
 
     <ItemGroup>
