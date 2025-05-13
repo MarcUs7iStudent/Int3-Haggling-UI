@@ -1,5 +1,6 @@
 ﻿using HagglingContracts.Interfaces;
 using HagglingContracts.Models;
+using HagglingUI.Dialogs;
 using Spectre.Console;
 namespace HagglingUI.Screen;
 
@@ -7,22 +8,12 @@ public class Screen : IScreen
 {
     public bool PrintInitialQuestion(IHuman customerAsking, IHuman vendor, ProductType productType)
     {
-        //TODO: Should use Dialogs
-        string question = productType switch 
-        {
+        var dialogPicker = new DialogPicker();
+        string customerQuestion = dialogPicker.GetCustomerDialogue(Dialogue.Greeting, customerAsking.Mood);
+        string vendorResponse = dialogPicker.GetVendorDialogue(Dialogue.Greeting, vendor.Mood);
 
-            ProductType.Food      => $"Do you have any food for sale?",
-            ProductType.Clothing  => $"Do you have any clothing available?",
-            ProductType.Dishware  => $"Do you sell dishware?",
-            ProductType.Tool      => $"Do you have any tools for sale?",
-            ProductType.Furniture => $"Do you sell furniture?",
-            ProductType.Luxury    => $"Do you have any luxury items?",
-            _                     => $"Do you have anything for sale?"
-        };
-
-
-        AnsiConsole.MarkupLine($"[yellow]{customerAsking.Name}[/]: {question}");
-
+        AnsiConsole.MarkupLine($"[yellow]{customerAsking.Name}[/]: {customerQuestion}");
+        AnsiConsole.MarkupLine($"[cyan]{vendor.Name}[/]: {vendorResponse}");
 
         return true;
     }
