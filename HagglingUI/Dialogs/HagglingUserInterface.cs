@@ -74,7 +74,25 @@ public class HagglingUserInterface : IHagglingUI
 
     public bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product) => _screen.PrintTradeDetails(customer, vendor, product);
 
-    public bool PrintTradeResult(IHuman personOffering, IHuman customer, IHuman vendor, Offer finalOffer) => _screen.PrintTradeResult(personOffering, customer, vendor, finalOffer);
+    public bool PrintTradeResult(IHuman personOffering, IHuman customer, IHuman vendor, Offer finalOffer)
+    {
+        
+        var tradeSummaryTable = new Table()
+                                .Border(TableBorder.Rounded)
+                                .Title("[bold]Trade Summary[/]")
+                                .AddColumn("")
+                                .AddColumn("");
+
+        tradeSummaryTable.AddRow("[green]✓ Deal Completed![/]", "");
+        tradeSummaryTable.AddRow("",
+                                 $"[grey]{finalOffer.Product.Name} bought for [bold]{finalOffer.NewPrice} coins[/].[/]");
+        tradeSummaryTable.AddRow("",
+                                 $"Customer is [green]{customer.Mood}[/], Vendor is [yellow]{vendor.Mood}[/]");
+
+        AnsiConsole.Write(tradeSummaryTable);
+
+        return true;
+    }
 
     public bool PrintPersonIntroduction(IHuman person) => _screen.PrintPersonIntroduction(person);
 
