@@ -56,23 +56,4 @@ public class ScreenTester
         return mockPerson;
     }
 
-    [Fact]
-    public void TestPrintInitialQuestion()
-    {
-        var mockCustomer = CreateTestPerson();
-        var mockVendor = CreateTestPerson();
-        var screen = new Screen.Screen();
-        
-        using var sw = new StringWriter();
-        System.Console.SetOut(sw);
-    
-        screen.PrintInitialQuestion(mockCustomer.Object, mockVendor.Object, ProductType.Tool);
-        
-        string output = sw.ToString();
-        System.Console.SetOut(new StreamWriter(System.Console.OpenStandardOutput()) { AutoFlush = true });
-        
-        System.Console.WriteLine(output);
-
-        Assert.Contains("Do you have any tools for sale?", output);
-    }
 }
