@@ -1,4 +1,3 @@
-using HagglingUI.Audio;
 using HagglingUI.Screen;
 using HagglingContracts.Models;
 using HagglingContracts.Interfaces;
@@ -9,7 +8,6 @@ namespace HagglingUI;
 public class HagglingUserInterface : IHagglingUI
 {
     private readonly IScreen _screen = new Screen.Screen();
-    private readonly IAudio _audio = new Audio.Audio();
 
     public bool PrintInitialQuestion(IHuman customerAsking, IHuman vendor, ProductType productType) => _screen.PrintInitialQuestion(customerAsking, vendor, productType);
 
@@ -26,10 +24,4 @@ public class HagglingUserInterface : IHagglingUI
     public bool PrintError(DialogueError dialogueError, string errorMessage) => _screen.PrintError(dialogueError, errorMessage);
 
     public bool ClearScreen() => _screen.ClearScreen();
-
-    public bool PlayAudio() => _audio.PlayAudio();
-
-    public bool PauseAudio() => _audio.PauseAudio();
-    
-    public bool StopAudio() => _audio.StopAudio();
 }
