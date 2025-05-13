@@ -86,7 +86,6 @@ public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partne
         AnsiConsole.Write(new Panel($"{roleDesc}: [bold]{person.Name}[/], {person.Gender}, age {person.Age}")
             .Border(BoxBorder.Rounded)
             .BorderColor(Color.Yellow));
-        
         return true;
     }
 
