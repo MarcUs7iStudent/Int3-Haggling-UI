@@ -45,7 +45,7 @@ public class Screen : IScreen
     /// <param name="customer"></param>
     /// <param name="vendor"></param>
     /// <param name="finalOffer"></param>
-    /// <returns>False if no Console is attached, else print the result. </returns>
+    /// <returns>False if no Console is attached, else print the result . </returns>
     public bool PrintTradeResult(IHuman personOffering, IHuman customer, IHuman vendor, Offer finalOffer)
     {
         if (!ConsoleCheck.IsConsoleAttached())
