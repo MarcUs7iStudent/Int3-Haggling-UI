@@ -73,10 +73,21 @@ public class HagglingUserInterface : IHagglingUI
     public bool PrintDialogue(Dialogue dialogue, IHuman personTalking, IHuman partner, Offer? offer = null) => _screen.PrintDialogue(dialogue, personTalking, partner, offer);
 
     public bool PrintTradeDetails(IHuman customer, IHuman vendor, Product product) => _screen.PrintTradeDetails(customer, vendor, product);
-
+    
+    /// <summary>
+    /// Print the result (final price, etc.)
+    /// </summary>
+    /// <param name="personOffering"></param>
+    /// <param name="customer"></param>
+    /// <param name="vendor"></param>
+    /// <param name="finalOffer"></param>
+    /// <returns>False if no Console is attached, else print the result.</returns>
     public bool PrintTradeResult(IHuman personOffering, IHuman customer, IHuman vendor, Offer finalOffer)
     {
-        
+        if (!ConsoleCheck.IsConsoleAttached())
+        {
+            return false;
+        }
         var tradeSummaryTable = new Table()
                                 .Border(TableBorder.Rounded)
                                 .Title("[bold]Trade Summary[/]")
