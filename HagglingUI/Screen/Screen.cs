@@ -47,7 +47,7 @@ public class Screen : IScreen
         return true;
     }
 
-    public bool PrintError(string errorMessage)
+    public bool PrintError(DialogueError dialogueError, string errorMessage)
     {
         Console.WriteLine("PrintError called");
         return false;

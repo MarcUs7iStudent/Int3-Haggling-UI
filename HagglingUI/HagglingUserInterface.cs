@@ -22,7 +22,7 @@ public class HagglingUserInterface : IHagglingUI
 
     public bool PrintPersonInfo(IHuman person) => _screen.PrintPersonInfo(person);
 
-    public bool PrintError(string errorMessage) => _screen.PrintError(errorMessage);
+    public bool PrintError(DialogueError dialogueError, string errorMessage) => _screen.PrintError(dialogueError, errorMessage);
 
     public bool ClearScreen() => _screen.ClearScreen();
 
