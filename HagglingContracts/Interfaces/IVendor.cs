@@ -30,8 +30,9 @@ public interface IVendor : IHuman
     /// <summary>
     /// Removes the product from the inventory and adds the proceeds to the balance
     /// </summary>
-    /// <param name="product"></param>
-    bool SellProduct(Product product);
+    /// <param name="product">The product that gets selled</param>
+    /// <param name="finalOffer">The final offer for the product that gets selled</param>
+    bool SellProduct(Product product, Offer finalOffer);
 
     /// <summary>
     /// Greets a person or kicks them out of the store if they are in the blacklist
