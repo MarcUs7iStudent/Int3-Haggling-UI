@@ -25,9 +25,12 @@ public interface ICustomer : IHuman
     /// </summary>
     /// <returns> Product type asked for </returns>
     ProductType? AskForProduct();
+    
     /// <summary>
     /// Adds the products into own inventory and removes the necessary funds
     /// </summary>
-    /// <param name="product"> product to add </param>
-    bool BuyProduct(Product product, IVendor vendor);
+    /// <param name="product">Product to add</param>
+    /// <param name="vendor">The vendor it buys from</param>
+    /// <param name="finalOffer">The final offer</param>
+    bool BuyProduct(Product product, IVendor vendor, Offer finalOffer);
 }
