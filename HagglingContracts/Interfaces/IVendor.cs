@@ -16,15 +16,15 @@ public interface IVendor : IHuman
     /// <summary>
     /// Suggests a product to a customer based on what they are looking for and who they are
     /// </summary>
-    /// <param name="customer"> customer to suggest to </param>
-    /// <param name="lookingToBuy"> what the customer is looking to buy </param>
-    /// <returns> Initial offer made for the suggestion </returns>
+    /// <param name="customer">Customer to suggest to</param>
+    /// <param name="lookingToBuy">What the customer is looking to buy</param>
+    /// <returns>Initial offer made for the suggestion</returns>
     Offer? SuggestProduct(ICustomer customer, ProductType lookingToBuy);
 
     /// <summary>
     /// Adds the customer to a blacklist, after which he cannot try to buy from this vendor again
     /// </summary>
-    /// <param name="customer"> customer to blacklist </param>
+    /// <param name="customer">Customer to blacklist</param>
     bool Blacklist(ICustomer customer);
 
     /// <summary>
@@ -37,7 +37,7 @@ public interface IVendor : IHuman
     /// <summary>
     /// Greets a person or kicks them out of the store if they are in the blacklist
     /// </summary>
-    /// <param name="person"> person to greet/kick out </param>
-    /// <returns> Dialogue to print </returns>
+    /// <param name="person">Person to greet/kick out</param>
+    /// <returns>Dialogue to print</returns>
     Dialogue? InitiateTrade(ICustomer person);
 }
