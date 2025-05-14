@@ -43,9 +43,9 @@ public interface IHuman
     /// either accepting the offer, canceling the trade, or giving a counteroffer,
     /// also changing own mood accordingly 
     /// </summary>
-    /// <param name="vendor"> The person offering </param>
-    /// <param name="offer"> The offer to react to </param>
-    /// <param name="counteroffer"> if so decided, give the other person a counteroffer, leave as null otherwise </param>
-    /// <returns> decided answer of the customer </returns>
+    /// <param name="vendor">The person offering</param>
+    /// <param name="offer">The offer to react to</param>
+    /// <param name="counteroffer">If so decided, give the other person a counteroffer, leave as null otherwise</param>
+    /// <returns>Decided answer of the customer</returns>
     Dialogue ProcessOffer(IHuman vendor, Offer offer, out Offer? counteroffer);
 }
