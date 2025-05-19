@@ -67,8 +67,8 @@ public class Screen : IScreen
             .AddColumn("")
             .AddColumn("");
 
-        tradeDetailsTable.AddRow("Customer", $"[pink]{customer.Name}[/] ([italic]{customer.Mood}[/])");
-        tradeDetailsTable.AddRow("Vendor", $"[pink]{vendor.Name}[/] ([italic]{vendor.Mood}[/])");
+        tradeDetailsTable.AddRow("Customer", $"[red]{customer.Name}[/] ([italic]{customer.Mood}[/])");
+        tradeDetailsTable.AddRow("Vendor", $"[red]{vendor.Name}[/] ([italic]{vendor.Mood}[/])");
         tradeDetailsTable.AddRow("Product", $"[cyan]{product.Name}[/] - [green]{product.Type}[/] - [green]€{product.Price:F2}[/]");
 
         AnsiConsole.Write(tradeDetailsTable);
