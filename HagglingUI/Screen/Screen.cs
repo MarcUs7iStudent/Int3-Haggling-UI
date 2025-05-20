@@ -20,7 +20,7 @@ public class Screen : IScreen
         Product product = new Product(1, "Sample Product", 10M, ProductType.Clothing);
         
         string formatedDialog = DialogHelper.FormatDialog(customerQuestion,vendor,customerAsking, product, offer, offer);
-        AnsiConsole.MarkupLine($"[yellow]" + formatedDialog);
+        AnsiConsole.MarkupLine($"[yellow] {formatedDialog}[/]");
         
         return true;
     }
